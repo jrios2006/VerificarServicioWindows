@@ -1,0 +1,16 @@
+{
+    "BBDD" : [
+        "HOST/IP",
+        1521,
+        "BBDD/SID",
+        "USER",
+        "PASSWORD"
+    ],
+    "CORREO" : [
+        "noreply@dominio.com",
+        "smtp.serviciodecorreo.es",
+        465,
+        "noreply@dominio.com",
+        "PasswordCuentaCorreo"
+    ]
+}

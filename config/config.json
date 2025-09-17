@@ -1,0 +1,21 @@
+{
+    "FicheroCredenciales" : "config/credenciales.json",
+    "FicheroReinicios" : "log_reinicio.txt",
+
+    "sqlInstancias" : "SELECT INST_ID, HOST_NAME, INSTANCE_NAME, STATUS FROM GV$INSTANCE;",
+
+    "programa_servicio" : "NOMBRE_SERVICIO.exe",
+    "esquema_base_de_datos" :  "ESQUEMABBDD",    
+    "sql" : "SELECT NVL( (SYSDATE - MAX(LAST_ACTIVE_TIME) ) * 24 * 60 * 60, 61) AS diferencia_segundos FROM V$SQLAREA T WHERE PARSING_SCHEMA_NAME='%%ESQUEMABASEDATOS%%' AND MODULE = '%%PROGRAMASERVICIO%%' ORDER BY T.LAST_ACTIVE_TIME DESC;",
+
+    "nombre_servicio" : "NOMBRE_SERVICIO",
+    "ComenarioLog" : "Cambiar el atributo BorrarLog a false si no queremos borrar el log y a true si no queremos el log que va ganerando su programa",
+    "BorrarLog" : true,
+
+    "AlertaCorreo" : {
+        "destinatario" : "jrios@dominio.com",
+        "asunto" : "Se ha reiniciado el servicio %%NOMBRESERVICIO%% en la máquina %%SERVIDORCLIENTE%%",
+        "cuerpo" : "<p>Se adjunta el fichero de reinicios de la máquina. Revisar el porqué se ha reiniciado.</p><br>Adfunto los datos de la máquina donde se ejecuta<br>"
+    },
+    "EnviarCorreo" : false
+}
