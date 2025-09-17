@@ -59,7 +59,7 @@ Ejemplo:
     },
     "EnviarCorreo" : false
 }
-
+```
 ## ⚙️ ConfiguraciónCampos principales:
 
 * programa_servicio → ejecutable del servicio a monitorizar.
@@ -126,4 +126,5 @@ python main.py
 ## 📧 Notificaciones por correo
 
 Si EnviarCorreo = true en el config.json, cada reinicio genera un correo de aviso.
+
 El mensaje se basa en la plantilla configurada en el bloque AlertaCorreo.
