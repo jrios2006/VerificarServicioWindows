@@ -20,6 +20,7 @@
 # Junio 2024
 
 # Librerías de uso
+import os
 import datetime
 import json
 import logging
@@ -36,6 +37,8 @@ def main(args):
     FechaInicial = datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")[:-3]
     FicheroLog = FechaInicial + ".log" # Nombre del log
     HoraInicial = time() # Para calcular timepo de ejecución y cuando tardamos en procesar todo el proceso
+    # Asegurar que exista la carpeta 'log'
+    os.makedirs("log", exist_ok=True)
     try:
         with open('config/config.json', encoding='utf-8') as fichero_inicial:
             ParametrosIniciales = json.load(fichero_inicial)
@@ -135,4 +138,5 @@ def main(args):
 
 if __name__ == '__main__':
     import sys
+
     sys.exit(main(sys.argv))
